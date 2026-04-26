@@ -1,0 +1,6 @@
+{
+  "name": "LimitMind",
+  "description": "Aplicacion interactiva para aprender límites matemáticos: visualización Épsilon-Delta, teoría y ejercicios paso a paso.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
