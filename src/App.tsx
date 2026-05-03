@@ -9,6 +9,7 @@ import { Theory } from "./pages/Theory";
 import { EpsilonDelta } from "./pages/EpsilonDelta";
 import { Exercises } from "./pages/Exercises";
 import { Strategies } from "./pages/Strategies";
+import { Applications } from "./pages/Applications";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="visualize" element={<EpsilonDelta />} />
           <Route path="exercises" element={<Exercises />} />
           <Route path="strategies" element={<Strategies />} />
+          <Route path="applications" element={<Applications />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

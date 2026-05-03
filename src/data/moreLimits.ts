@@ -483,5 +483,275 @@ export const moreExercises: LimitExercise[] = [
       }
     ],
     result: "5"
+  },
+  {
+    id: 37,
+    expression: "\\lim_{x \\to \\infty} \\frac{3\\sin(x)}{2\\sqrt{x}}",
+    steps: [
+      {
+        description: "Evaluamos el comportamiento asintótico. Notamos que la función $\\sin(x)$ está acotada entre -1 y 1 para todo valor de $x$.",
+        math: "-1 \\leq \\sin(x) \\leq 1"
+      },
+      {
+        description: "Multiplicamos la inecuación por el factor positivo $\\frac{3}{2\\sqrt{x}}$ (asumiendo $x > 0$).",
+        math: "-\\frac{3}{2\\sqrt{x}} \\leq \\frac{3\\sin(x)}{2\\sqrt{x}} \\leq \\frac{3}{2\\sqrt{x}}"
+      },
+      {
+        description: "Evaluamos los límites de los extremos cuando $x \\to \\infty$.",
+        math: "\\lim_{x \\to \\infty} -\\frac{3}{2\\sqrt{x}} = 0 \\quad \\text{y} \\quad \\lim_{x \\to \\infty} \\frac{3}{2\\sqrt{x}} = 0"
+      },
+      {
+        description: "Por el Teorema del Sándwich, como ambos extremos tienden a cero, la función central también debe converger a cero.",
+        math: "\\lim_{x \\to \\infty} \\frac{3\\sin(x)}{2\\sqrt{x}} = 0"
+      }
+    ],
+    result: "0"
+  },
+  {
+    id: 38,
+    expression: "\\lim_{x \\to \\infty} \\frac{3x^2 - \\sin(2x)}{x^2 + 1}",
+    steps: [
+      {
+        description: "Para límites al infinito con polinomios, dividimos cada término de la expresión por la variable con la mayor potencia en el denominador, que es $x^2$.",
+        math: "\\lim_{x \\to \\infty} \\frac{\\frac{3x^2}{x^2} - \\frac{\\sin(2x)}{x^2}}{\\frac{x^2}{x^2} + \\frac{1}{x^2}}"
+      },
+      {
+        description: "Simplificamos las fracciones resultantes.",
+        math: "\\lim_{x \\to \\infty} \\frac{3 - \\frac{\\sin(2x)}{x^2}}{1 + \\frac{1}{x^2}}"
+      },
+      {
+        description: "Analizamos el término $\\frac{\\sin(2x)}{x^2}$. Sabemos que $\\sin(2x)$ está acotado entre -1 y 1. Por el Teorema del Sándwich, su límite al ser dividido por $x^2$ (que crece indefinidamente) es 0.",
+        math: "\\lim_{x \\to \\infty} \\frac{\\sin(2x)}{x^2} = 0"
+      },
+      {
+        description: "Evaluamos el límite considerando que $\\frac{1}{x^2}$ también tiende a cero.",
+        math: "\\frac{3 - 0}{1 + 0} = 3"
+      }
+    ],
+    result: "3"
+  },
+  {
+    id: 39,
+    expression: "\\lim_{x \\to \\infty} f(x) \\quad \\text{si} \\quad \\frac{5e^x - 11}{e^x} < f(x) < \\frac{5\\sqrt{x}}{\\sqrt{x - 2}}",
+    steps: [
+      {
+        description: "Utilizamos el Teorema del Sándwich. Para ello, debemos encontrar el límite de la función que acota por la izquierda y la que acota por la derecha.",
+        math: "L_{\\text{izq}} = \\lim_{x \\to \\infty} \\frac{5e^x - 11}{e^x} \\quad \\text{y} \\quad L_{\\text{der}} = \\lim_{x \\to \\infty} \\frac{5\\sqrt{x}}{\\sqrt{x - 2}}"
+      },
+      {
+        description: "Calculamos el límite izquierdo distribuyendo el denominador.",
+        math: "L_{\\text{izq}} = \\lim_{x \\to \\infty} \\left( \\frac{5e^x}{e^x} - \\frac{11}{e^x} \\right) = \\lim_{x \\to \\infty} \\left( 5 - \\frac{11}{e^x} \\right) = 5 - 0 = 5"
+      },
+      {
+        description: "Calculamos el límite derecho dividiendo ambos términos dentro de la raíz por $x$.",
+        math: "L_{\\text{der}} = \\lim_{x \\to \\infty} \\frac{5\\sqrt{\\frac{x}{x}}}{\\sqrt{\\frac{x}{x} - \\frac{2}{x}}} = \\lim_{x \\to \\infty} \\frac{5(1)}{\\sqrt{1 - \\frac{2}{x}}} = \\frac{5}{\\sqrt{1 - 0}} = 5"
+      },
+      {
+        description: "Ya que ambos límites extremos convergen a 5, obligatoriamente el límite de la función central es 5.",
+        math: "\\lim_{x \\to \\infty} f(x) = 5"
+      }
+    ],
+    result: "5"
+  },
+  {
+    id: 40,
+    expression: "\\lim_{x \\to \\infty} (\\sqrt{x^2+x} - x)",
+    steps: [
+      {
+        description: "Presenta una indeterminación del tipo $\\infty - \\infty$. Racionalizamos multiplicando por el conjugado.",
+        math: "\\lim_{x \\to \\infty} \\frac{(\\sqrt{x^2+x} - x)(\\sqrt{x^2+x} + x)}{\\sqrt{x^2+x} + x}"
+      },
+      {
+        description: "Aplicamos diferencia de cuadrados en el numerador para eliminar la raíz y simplificamos.",
+        math: "\\lim_{x \\to \\infty} \\frac{(x^2+x) - x^2}{\\sqrt{x^2+x} + x} = \\lim_{x \\to \\infty} \\frac{x}{\\sqrt{x^2+x} + x}"
+      },
+      {
+        description: "Factorizamos la $x$ del denominador para poder simplificar con el numerador.",
+        math: "\\lim_{x \\to \\infty} \\frac{x}{x\\left(\\sqrt{1+\\frac{1}{x}} + 1\\right)} = \\lim_{x \\to \\infty} \\frac{1}{\\sqrt{1+\\frac{1}{x}} + 1}"
+      },
+      {
+        description: "Evaluamos el límite considerando que $1/x \\to 0$.",
+        math: "\\frac{1}{\\sqrt{1+0} + 1} = \\frac{1}{1 + 1} = \\frac{1}{2}"
+      }
+    ],
+    result: "\\frac{1}{2}"
+  },
+  {
+    id: 41,
+    expression: "\\lim_{x \\to 0} \\frac{1 - \\cos(2x)}{x \\sin(x)}",
+    steps: [
+      {
+        description: "Sustitución directa da forma $0/0$. Utilizamos identidades trigonométricas. Sabemos que $1 - \\cos(2x) = 2\\sin^2(x)$.",
+        math: "\\lim_{x \\to 0} \\frac{2\\sin^2(x)}{x \\sin(x)}"
+      },
+      {
+        description: "Simplificamos un factor de $\\sin(x)$ en numerador y denominador.",
+        math: "\\lim_{x \\to 0} \\frac{2\\sin(x)}{x}"
+      },
+      {
+        description: "Extraemos la constante y aplicamos el límite notable $\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$.",
+        math: "2 \\cdot \\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 2 \\cdot 1 = 2"
+      }
+    ],
+    result: "2"
+  },
+  {
+    id: 42,
+    expression: "\\lim_{x \\to \\infty} \\left(1 + \\frac{3}{x}\\right)^{2x}",
+    steps: [
+      {
+        description: "Evaluando obtenemos $1^{\\infty}$. Utilizamos la propiedad del límite notable exponencial $\\lim_{x \\to \\infty} (1 + \\frac{k}{x})^x = e^k$.",
+        math: "\\lim_{x \\to \\infty} \\left[ \\left(1 + \\frac{3}{x}\\right)^x \\right]^2"
+      },
+      {
+        description: "El límite interior converge a $e^3$.",
+        math: "(e^3)^2"
+      },
+      {
+        description: "Aplicamos propiedades de potencias.",
+        math: "e^{3 \\cdot 2} = e^6"
+      }
+    ],
+    result: "e^6"
+  },
+  {
+    id: 43,
+    expression: "\\lim_{x \\to \\infty} \\frac{5x^3 - 2x + 1}{x^3 + 4}",
+    steps: [
+      {
+        description: "Es un límite al infinito de un cociente de polinomios del mismo grado. La forma rápida es dividir sus coeficientes principales.",
+        math: "\\lim_{x \\to \\infty} \\frac{\\frac{5x^3}{x^3} - \\frac{2x}{x^3} + \\frac{1}{x^3}}{\\frac{x^3}{x^3} + \\frac{4}{x^3}}"
+      },
+      {
+        description: "Evaluamos las fracciones que tienden a cero.",
+        math: "\\frac{5 - 0 + 0}{1 + 0} = 5"
+      }
+    ],
+    result: "5"
+  },
+  {
+    id: 44,
+    expression: "\\lim_{x \\to 2} \\frac{x^3 - 8}{x - 2}",
+    steps: [
+      {
+        description: "Genera la indeterminación $0/0$. Factorizamos el numerador usando diferencia de cubos: $A^3 - B^3 = (A-B)(A^2+AB+B^2)$.",
+        math: "\\lim_{x \\to 2} \\frac{(x-2)(x^2 + 2x + 4)}{x - 2}"
+      },
+      {
+        description: "Cancelamos el factor $(x-2)$.",
+        math: "\\lim_{x \\to 2} (x^2 + 2x + 4)"
+      },
+      {
+        description: "Evaluamos directamente con $x = 2$.",
+        math: "2^2 + 2(2) + 4 = 4 + 4 + 4 = 12"
+      }
+    ],
+    result: "12"
+  },
+  {
+    id: 45,
+    expression: "\\lim_{x \\to 0} \\frac{\\sin(7x)}{4x}",
+    steps: [
+      {
+        description: "Indeterminación $0/0$. Buscamos usar el límite notable del seno. Para ello, multiplicamos el numerador y denominador por 7.",
+        math: "\\lim_{x \\to 0} \\frac{7 \\sin(7x)}{4 \\cdot 7x}"
+      },
+      {
+        description: "Agrupamos el 7 del numerador y el 4 del denominador como una constante fuera del límite.",
+        math: "\\frac{7}{4} \\cdot \\lim_{x \\to 0} \\frac{\\sin(7x)}{7x}"
+      },
+      {
+        description: "El límite resultante vale 1.",
+        math: "\\frac{7}{4} \\cdot 1 = \\frac{7}{4}"
+      }
+    ],
+    result: "\\frac{7}{4}"
+  },
+  {
+    id: 46,
+    expression: "\\lim_{x \\to 0} \\frac{e^{2x} - 1}{\\sin(3x)}",
+    steps: [
+      {
+        description: "Da la forma $0/0$. Dividimos tanto el numerador como el denominador entre $x$ para usar límites notables.",
+        math: "\\lim_{x \\to 0} \\frac{\\frac{e^{2x} - 1}{x}}{\\frac{\\sin(3x)}{x}}"
+      },
+      {
+        description: "Ajustamos los límites multiplicando y dividiendo por las constantes necesarias (2 arriba y 3 abajo).",
+        math: "\\lim_{x \\to 0} \\frac{2 \\cdot \\frac{e^{2x} - 1}{2x}}{3 \\cdot \\frac{\\sin(3x)}{3x}}"
+      },
+      {
+        description: "Evaluamos sabiendo que ambos límites notables internos valen 1.",
+        math: "\\frac{2 \\cdot 1}{3 \\cdot 1} = \\frac{2}{3}"
+      }
+    ],
+    result: "\\frac{2}{3}"
+  },
+  {
+    id: 47,
+    expression: "\\lim_{x \\to 3} \\frac{\\sqrt{x+1} - 2}{x - 3}",
+    steps: [
+      {
+        description: "Indeterminación $0/0$. Multiplicamos por el conjugado del numerador.",
+        math: "\\lim_{x \\to 3} \\frac{\\sqrt{x+1} - 2}{x - 3} \\cdot \\frac{\\sqrt{x+1} + 2}{\\sqrt{x+1} + 2}"
+      },
+      {
+        description: "Aplicamos diferencia de cuadrados en la parte superior.",
+        math: "\\lim_{x \\to 3} \\frac{(x+1) - 4}{(x - 3)(\\sqrt{x+1} + 2)} = \\lim_{x \\to 3} \\frac{x - 3}{(x - 3)(\\sqrt{x+1} + 2)}"
+      },
+      {
+        description: "Cancelamos la causa de la indeterminación y evaluamos.",
+        math: "\\lim_{x \\to 3} \\frac{1}{\\sqrt{x+1} + 2} = \\frac{1}{\\sqrt{4} + 2} = \\frac{1}{2+2} = \\frac{1}{4}"
+      }
+    ],
+    result: "\\frac{1}{4}"
+  },
+  {
+    id: 48,
+    expression: "\\lim_{x \\to \\infty} \\frac{\\sqrt{x^2+1}}{2x-1}",
+    steps: [
+      {
+        description: "Límite al infinito $\\infty/\\infty$. Dividimos todo por $x$ (que es $\\sqrt{x^2}$ para valores positivos).",
+        math: "\\lim_{x \\to \\infty} \\frac{\\frac{\\sqrt{x^2+1}}{x}}{\\frac{2x-1}{x}} = \\lim_{x \\to \\infty} \\frac{\\sqrt{\\frac{x^2}{x^2}+\\frac{1}{x^2}}}{2 - \\frac{1}{x}}"
+      },
+      {
+        description: "Evaluamos recordando que $1/x \\to 0$.",
+        math: "\\frac{\\sqrt{1 + 0}}{2 - 0} = \\frac{1}{2}"
+      }
+    ],
+    result: "\\frac{1}{2}"
+  },
+  {
+    id: 49,
+    expression: "\\lim_{x \\to 0} \\frac{x}{\\sqrt{1+3x} - 1}",
+    steps: [
+      {
+        description: "Forma indeterminada $0/0$. Multiplicamos por el factor conjugado del denominador.",
+        math: "\\lim_{x \\to 0} \\frac{x(\\sqrt{1+3x} + 1)}{(\\sqrt{1+3x} - 1)(\\sqrt{1+3x} + 1)}"
+      },
+      {
+        description: "Desarrollamos el denominador usando diferencia de cuadrados.",
+        math: "\\lim_{x \\to 0} \\frac{x(\\sqrt{1+3x} + 1)}{(1+3x) - 1} = \\lim_{x \\to 0} \\frac{x(\\sqrt{1+3x} + 1)}{3x}"
+      },
+      {
+        description: "Simplificamos la $x$ y procedemos a evaluar.",
+        math: "\\lim_{x \\to 0} \\frac{\\sqrt{1+3x} + 1}{3} = \\frac{\\sqrt{1+0} + 1}{3} = \\frac{2}{3}"
+      }
+    ],
+    result: "\\frac{2}{3}"
+  },
+  {
+    id: 50,
+    expression: "\\lim_{x \\to 1} \\frac{\\ln(x)}{x-1}",
+    steps: [
+      {
+        description: "Aplicamos un cambio de variable $u = x-1$. Entonces $x = u+1$. Si $x \\to 1$, entonces $u \\to 0$.",
+        math: "\\lim_{u \\to 0} \\frac{\\ln(u+1)}{u}"
+      },
+      {
+        description: "Reconocemos que esto corresponde exactamente a un límite notable logarítmico.",
+        math: "\\lim_{u \\to 0} \\frac{\\ln(1+u)}{u} = 1"
+      }
+    ],
+    result: "1"
   }
 ];

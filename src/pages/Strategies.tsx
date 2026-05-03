@@ -87,12 +87,15 @@ export function Strategies() {
 
     const notableLimits = [
         { name: "Seno", math: "\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1" },
+        { name: "Seno con Constante", math: "\\lim_{x \\to 0} \\frac{\\sin(kx)}{x} = k" },
         { name: "Tangente", math: "\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1" },
         { name: "Coseno", math: "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0" },
         { name: "Coseno Cuadrático", math: "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} = \\frac{1}{2}" },
         { name: "Logaritmo Natural", math: "\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} = 1" },
+        { name: "Logaritmo con Constante", math: "\\lim_{x \\to 0} \\frac{\\ln(1+kx)}{x} = k" },
         { name: "Exponencial General", math: "\\lim_{x \\to 0} \\frac{a^x - 1}{x} = \\ln a" },
         { name: "Exponencial e", math: "\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1" },
+        { name: "Exponencial e con Constante", math: "\\lim_{x \\to 0} \\frac{e^{kx} - 1}{x} = k" },
         { name: "Euler Infinito", math: "\\lim_{x \\to \\pm\\infty} \\left(1 + \\frac{1}{x}\\right)^x = e" },
         { name: "Euler Cero", math: "\\lim_{x \\to 0} (1 + x)^{\\frac{1}{x}} = e" },
         { name: "Arcoseno", math: "\\lim_{x \\to 0} \\frac{\\arcsin x}{x} = 1" },

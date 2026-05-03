@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, Outlet, useLocation } from "react-router";
-import { FunctionSquare, BookOpen, Calculator, Menu, X, Lightbulb } from "lucide-react";
+import { FunctionSquare, BookOpen, Calculator, Menu, X, Lightbulb, LineChart } from "lucide-react";
 import "katex/dist/katex.min.css"; // Global Katex styles
 
 export function Layout() {
@@ -47,6 +47,13 @@ export function Layout() {
                 >
                   <Lightbulb className="w-4 h-4 mr-2" />
                   Estrategias
+                </Link>
+                <Link
+                  to="/applications"
+                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors ${location.pathname === '/applications' ? 'border-indigo-500 text-slate-900' : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700'}`}
+                >
+                  <LineChart className="w-4 h-4 mr-2" />
+                  Aplicaciones
                 </Link>
               </nav>
             </div>
@@ -97,6 +104,14 @@ export function Layout() {
             >
               <Lightbulb className="w-5 h-5 mr-3" />
               Estrategias
+            </Link>
+            <Link
+              to="/applications"
+              onClick={closeMenu}
+              className={`flex items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium ${location.pathname === '/applications' ? 'border-indigo-500 text-indigo-700 bg-indigo-50' : 'border-transparent text-slate-500 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-700'}`}
+            >
+              <LineChart className="w-5 h-5 mr-3" />
+              Aplicaciones
             </Link>
           </div>
         </div>
