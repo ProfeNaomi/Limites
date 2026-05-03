@@ -22,8 +22,8 @@ export function Theory() {
       title: "Asíntotas Verticales",
       content: "Una recta x = a es una asíntota vertical de la función f(x) si el límite cuando x tiende a 'a' por la izquierda o por la derecha es infinito. Suelen suceder en los ceros del denominador que no se cancelan.",
       math: [
-        "\\lim_{x \\to a^+} f(x) = \\infty \\quad \\text{o} \\quad \\lim_{x \\to a^-} f(x) = -\\infty",
-        "\\text{Ejemplo: } f(x) = \\frac{1}{x-2} \\implies \\text{AV en } x = 2"
+        "\\lim_{x \\to a^+} f(x) = \\infty",
+        "\\lim_{x \\to a^-} f(x) = -\\infty"
       ]
     },
     {

@@ -437,5 +437,51 @@ export const moreExercises: LimitExercise[] = [
       }
     ],
     result: "\\frac{1}{4a\\sqrt{a-b}}"
+  },
+  {
+    id: 35,
+    expression: "\\lim_{x \\to 0} x^2 \\sin\\left(\\frac{1}{x}\\right)",
+    steps: [
+      {
+        description: "La evaluación directa produce una indefinición ya que el seno oscila infinitamente cerca de 0. Utilizamos el Teorema del Sándwich (o del encaje). Sabemos que el seno siempre está acotado.",
+        math: "-1 \\leq \\sin\\left(\\frac{1}{x}\\right) \\leq 1"
+      },
+      {
+        description: "Multiplicamos la inecuación completa por $x^2$. Al ser siempre $x^2 \\geq 0$, el sentido de las desigualdades se mantiene inalterado.",
+        math: "-x^2 \\leq x^2 \\sin\\left(\\frac{1}{x}\\right) \\leq x^2"
+      },
+      {
+        description: "Calculamos el límite en los extremos de la inecuación cuando $x$ tiende a 0.",
+        math: "\\lim_{x \\to 0} (-x^2) = 0 \\quad \\text{y} \\quad \\lim_{x \\to 0} (x^2) = 0"
+      },
+      {
+        description: "Dado que las dos funciones que acotan tienden a 0, por el Teorema del Sándwich, la función central obligatoriamente tiene el mismo límite.",
+        math: "\\lim_{x \\to 0} x^2 \\sin\\left(\\frac{1}{x}\\right) = 0"
+      }
+    ],
+    result: "0"
+  },
+  {
+    id: 36,
+    expression: "\\lim_{x \\to 0} \\frac{e^{5x} - 1}{x}",
+    steps: [
+      {
+        description: "Al evaluar directamente obtenemos la indeterminación $0/0$. Identificamos el uso de un Límite Notable exponencial.",
+        math: "\\lim_{u \\to 0} \\frac{e^u - 1}{u} = 1"
+      },
+      {
+        description: "Para aplicar el límite notable, requerimos que el argumento en el denominador sea idéntico al exponente ($5x$). Multiplicamos y dividimos la expresión por 5.",
+        math: "\\lim_{x \\to 0} \\frac{e^{5x} - 1}{x} \\cdot \\frac{5}{5} = \\lim_{x \\to 0} 5 \\left( \\frac{e^{5x} - 1}{5x} \\right)"
+      },
+      {
+        description: "Consideramos un cambio de variable $u = 5x$. Ya que $x \\to 0$, consecuentemente $u \\to 0$.",
+        math: "5 \\cdot \\lim_{u \\to 0} \\frac{e^u - 1}{u}"
+      },
+      {
+        description: "Sustituimos el valor del límite notable (que es 1) y operamos la constante externa.",
+        math: "5 \\cdot 1 = 5"
+      }
+    ],
+    result: "5"
   }
 ];

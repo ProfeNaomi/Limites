@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { BlockMath, InlineMath } from "react-katex";
-import { Lightbulb, Maximize2, Repeat, Scissors, SplitSquareVertical } from "lucide-react";
+import { Lightbulb, Maximize2, Repeat, Scissors, SplitSquareVertical, Table } from "lucide-react";
 
 export function Strategies() {
     const strategies = [
@@ -85,6 +85,21 @@ export function Strategies() {
         }
     ];
 
+    const notableLimits = [
+        { name: "Seno", math: "\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1" },
+        { name: "Tangente", math: "\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1" },
+        { name: "Coseno", math: "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0" },
+        { name: "Coseno Cuadrático", math: "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} = \\frac{1}{2}" },
+        { name: "Logaritmo Natural", math: "\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} = 1" },
+        { name: "Exponencial General", math: "\\lim_{x \\to 0} \\frac{a^x - 1}{x} = \\ln a" },
+        { name: "Exponencial e", math: "\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1" },
+        { name: "Euler Infinito", math: "\\lim_{x \\to \\pm\\infty} \\left(1 + \\frac{1}{x}\\right)^x = e" },
+        { name: "Euler Cero", math: "\\lim_{x \\to 0} (1 + x)^{\\frac{1}{x}} = e" },
+        { name: "Arcoseno", math: "\\lim_{x \\to 0} \\frac{\\arcsin x}{x} = 1" },
+        { name: "Arcotangente", math: "\\lim_{x \\to 0} \\frac{\\arctan x}{x} = 1" },
+        { name: "Potencia Generalizada", math: "\\lim_{x \\to 0} \\frac{(1+x)^k - 1}{x} = k" },
+    ];
+
     return (
         <div className="space-y-6 animate-in fade-in duration-500 pb-16">
             <div className="border-b border-slate-200 pb-5">
@@ -123,6 +138,33 @@ export function Strategies() {
                     </motion.div>
                 ))}
             </div>
+
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="mt-12 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden p-6 lg:p-8"
+            >
+                <div className="flex items-center mb-6">
+                    <div className="bg-indigo-50 p-3 rounded-xl mr-4 flex-shrink-0">
+                        <Table className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <div>
+                        <h3 className="text-2xl font-bold text-slate-800">Tabla de Límites Notables</h3>
+                        <p className="text-slate-500 text-sm mt-1">
+                            Límites trigonométricos, exponenciales y logarítmicos de uso frecuente.
+                        </p>
+                    </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {notableLimits.map((lim, idx) => (
+                        <div key={idx} className="bg-slate-50 border border-slate-100 p-4 rounded-xl flex items-center justify-center hover:bg-slate-100 transition-colors text-slate-800 shadow-sm">
+                            <BlockMath math={lim.math} />
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
         </div>
     );
 }
