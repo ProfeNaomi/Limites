@@ -81,7 +81,7 @@ export function Applications() {
               </div>
               <div className="flex-shrink-0 bg-white rounded-2xl p-5 shadow-sm border border-indigo-100 flex flex-col items-center min-w-[140px]">
                 <div className="text-xs font-bold text-slate-400 uppercase text-center mb-3">Resultado Obtenido</div>
-                <div className="text-2xl font-bold text-emerald-600 text-center">{renderDescription(activeExe.result)}</div>
+                <div className="text-2xl font-bold text-emerald-600 text-center"><InlineMath math={activeExe.result} /></div>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export function Applications() {
                 <div className="bg-emerald-50 border border-emerald-200 p-6 rounded-2xl flex flex-col sm:flex-row items-center sm:justify-start gap-6 text-emerald-900 shadow-sm">
                   <span className="font-bold text-emerald-700 uppercase tracking-widest text-sm">Conclusión:</span>
                   <div className="text-2xl p-3 bg-white rounded-xl px-12 shadow-sm border border-emerald-100 text-center text-emerald-700">
-                    {renderDescription(activeExe.result)}
+                    <InlineMath math={activeExe.result} />
                   </div>
                 </div>
               </div>
